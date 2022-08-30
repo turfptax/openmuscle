@@ -1,0 +1,5 @@
+Analog to Digital Converters:
+https://www.arrow.com/en/products/adc124s101cimmnopb/texas-instruments
+  4 inputs 1 ADC 1Msps 12bit Serial (4-wire,spi,qspi,microwire) 2.7 - 3.3|5 to 5.25v
+https://www.arrow.com/en/products/ad7993bru-1/analog-devices
+  4 inputs 1 ADC 188ksps 10bit Serial(2-wire,I2C)
