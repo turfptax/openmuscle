@@ -14,5 +14,6 @@ Current Needs:
 2. Electric Engineer to help develop safety circuitry
 3. Audio Specialist for noise reduction in signals
 4. Mechanical Engineer for armband mechanism to help the pistons make contact with the skin on different diameter forearms
+5. Battery module design
 
 
