@@ -3,3 +3,6 @@ https://www.arrow.com/en/products/adc124s101cimmnopb/texas-instruments
   4 inputs 1 ADC 1Msps 12bit Serial (4-wire,spi,qspi,microwire) 2.7 - 3.3|5 to 5.25v
 https://www.arrow.com/en/products/ad7993bru-1/analog-devices
   4 inputs 1 ADC 188ksps 10bit Serial(2-wire,I2C)
+https://www.arrow.com/en/products/mcp3021a7t-eot/microchip-technology?gclid=Cj0KCQjwjbyYBhCdARIsAArC6LLkylTQalxL-KSEcVwe5gvgbxC8UyRSM97xsihvLm36dgEj_EPpJsIaAmpWEALw_wcB&gclsrc=aw.ds
+MCP3021A7T-E/OT 
+  1 input 1 ADC 23.3ksps 10bit Serial(2-wire,I2C) Addressable up to 8 devices on single I2C 2-wire chain.
