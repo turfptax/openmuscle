@@ -17,3 +17,8 @@ Current Needs:
 5. Battery module design
 
 
+For the first prototype we are using micropython to make a proof of concept.
+
+The micropython code provided by Jeremy P Bentham on his blog https://github.com/pimoroni/pimoroni-pico/releases/tag/v0.2.6  is amazing and is used for the basis test code for the ADCs.
+
+Version 1.3 of the CELL0 units is out and Version 1.0 of the Compute Module are being manufactured currently.
