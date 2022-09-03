@@ -20,7 +20,9 @@
 import time, array, uctypes, rp_devices as devs
 
 
-# Fetch single ADC sample with cannel and samples
+
+# Fetch single ADC sample
+
 def getADC_VAL(channel,samples):
   ADC_CHAN = channel
   ADC_PIN  = 26 + ADC_CHAN
@@ -72,10 +74,7 @@ def getADC_VAL(channel,samples):
   print(vals)
 
 getADC_VAL(0,4)
-
-for i in range(100):
-  print(i)
-  getADC_VAL(1,2)
+  
 # EOF
 
 
