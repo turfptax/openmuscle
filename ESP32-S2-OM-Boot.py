@@ -66,7 +66,7 @@ sta_if.active(False)
 if not sta_if.isconnected():
   print('connecting to network...')
   sta_if.active(True)
-  sta_if.connect('ALLO7D31E','1891067549')
+  sta_if.connect('ALD7510-Testchn11','3141592653')
   while not sta_if.isconnected():
     pass
 
