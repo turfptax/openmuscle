@@ -1,10 +1,10 @@
 # OpenMuscle Sensor Band 5.3.0
 # UDP send 
-
-
+# super rough working code not pythonic
 
 # Test boot for masic functions for esp32-s2-mini
 # need to have omwap file on ESP32-S2
+# omwap Open Muscle Wireless Access Point - throughput not good enough for UDP packets on ESP32-C3 without more testing
 #import omwap
 import time
 import machine
@@ -49,17 +49,16 @@ for i in hall:
   print('hall[' + str(oo+1) + ']:',i.read())
   oo += 1
 
+#Prototype has SSD1306 hookups and two switches relying on internal pull ressistors
 #I2C pin allocation test
 #print('i2c test pins')
 #i2c = machine.I2C(scl=machine.Pin(33), sda=machine.Pin(35))
 #https://www.dfrobot.com/blog-608.html
 
-
 throw(5)
 
-
-
-
+#need encrypted method of store/retrieve
+#current wifi connection because of ease of use
 sta_if = network.WLAN(network.STA_IF) 
 sta_if.active(False)
 
@@ -78,14 +77,21 @@ s = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
 #s.bind(('192.168.103.203',port))
 
 # Cell organization
+# old mehtod of storing adc objects
 #cell0 = [hall[5],hall[2]]
 #cell1 = [hall[4],hall[1]]
 #cell2 = [hall[3],hall[0]]
 #cell3 = [hall[16],hall[17]]
 #cell4 = [hall[11],hall[8]]
 #cell5 = [hall[12],hall[9]]
+
+#Version 5.3.0 miswired second two elements on hardware 0-11
+# 0-5 top circular band on hexigon 1 per cell
+# 6-11 bottom circular band on hexigon 1 per cell
 cells = [hall[5],hall[4],hall[3],hall[16],hall[11],hall[12],hall[1],hall[2],hall[0],hall[17],hall[8],hall[9]]
 
+#inital hall sensor ADC calibration
+# grabs first few inputs and reduces the value 
 def calibrate(data):
   calib = []
   better = data.split(',')
@@ -129,6 +135,8 @@ while True:
   
   
   try:
+    #UDP recepient address
+    #Work on dynamic setup protocol
     s.sendto(data.encode('utf-8'),('192.168.1.32',3145))
     time.sleep(.2)
   except:
