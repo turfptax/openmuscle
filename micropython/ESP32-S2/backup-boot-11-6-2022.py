@@ -20,7 +20,11 @@ sclPIN = 33
 sdaPIN = 34
 oledWIDTH = 128
 oledHEIGHT =  32
+button_leftPIN = 36
+button_rightPIN = 35
 led = False
+b_left = machine.Pin(button_leftPIN,machine.Pin.IN,machine.Pin.PULL_UP)
+b_right = machine.Pin(button_rightPIN,machine.Pin.IN,machine.Pin.PULL_UP)
 
 
 # Code feedback through onboard LED GPIO 15 or ledPIN
@@ -94,8 +98,9 @@ def frint(text,oled=oled,ram=ram):
     if len(ram) > 9:
       ram = ram[-9:0]
     oled.show()
+    print('f:> ',ram[-1])
   else:
-    print('frint(t) t=',text)
+    print('f:< ',text)
 
 # Start using frint to log and print backs up if frint doesnt work
 if oled:
@@ -122,32 +127,29 @@ throw(5)
 
 #need encrypted method of store/retrieve
 #current wifi connection because of ease of use
-sta_if = network.WLAN(network.STA_IF) 
-sta_if.active(False)
+def initNETWORK(a=b_left,b=b_right):
+  #need optional backup UDP repl if can't connect
+  #primary and secondary networks
+  #if primary then try secondary dev wifi access point
+  wlan = network.WLAN(network.STA_IF) 
+  wlan.active(False)
+  if not wlan.isconnected():
+    frint('connecting to network...')
+    if wlan.isconnected() == False:
+      wlan.active(True)
+    wlan.connect('OpenMuscle','3141592653')
+    while not wlan.isconnected():
+      pass
 
-if not sta_if.isconnected():
-  print('connecting to network...')
-  if sta_if.isconnected() == False:
-    sta_if.active(True)
-  sta_if.connect('OpenMuscle','3141592653')
-  while not sta_if.isconnected():
-    pass
-
-print('assing port and bind')
-port = 5005
-print('network config: ',sta_if.ifconfig())
-frint('network connected[Y]')
-s = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+  print('assing port and bind')
+  port = 5005
+  print('network config: ',wlan.ifconfig())
+  frint('network connected[Y]')
+  s = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+  return(s,wlan)
 #s.bind(('192.168.103.203',port))
 
-# Cell organization
-# old mehtod of storing adc objects
-#cell0 = [hall[5],hall[2]]
-#cell1 = [hall[4],hall[1]]
-#cell2 = [hall[3],hall[0]]
-#cell3 = [hall[16],hall[17]]
-#cell4 = [hall[11],hall[8]]
-#cell5 = [hall[12],hall[9]]
+s,wlan = initNETWORK()
 
 #Version 5.3.0 miswired second two elements on hardware 0-11
 # 0-5 top circular band on hexigon 1 per cell
@@ -186,26 +188,37 @@ calib = [0,0,0,0,0,0,0,0,0,0,0,0]
 time.sleep(10)
 
 
-frint('key input needed')
-input()
+def mainloup(calib=calib,pi=pi,plen=plen,oled=oled,ram=ram,led=led,cells=cells,a=b_left,b=b_right):
+  exit_bool = False
+  button_thresh = 0
+  while not exit_bool:
+    if a.value() == 0:
+      button_thresh += 1
+    else:
+      button_thresh += -1
+    if button_thresh > 20:
+      exit_bool = True
+    elif button_thresh < 0:
+      button_thresh = 0
+    data = ''
+    for i in range(len(cells)):
+      data += str(cells[i].read()-calib[i]) + ','
+    if pi == 0:
+      calib = calibrate(data)
+      print(calib)
+    if pi >= 10:
+      pi = 1
+    else:
+      pi += 1
+    #Append the cycle with : deliminer delimeter
+    try:
+      #UDP recepient address
+      #Work on dynamic setup protocol
+      s.sendto(data.encode('utf-8'),('192.168.1.32',3145))
+      time.sleep(.2)
+    except:
+      print('failed')
 
-while True:
-  data = ''
-  for i in range(len(cells)):
-    data += str(cells[i].read()-calib[i]) + ','
-  if pi == 0:
-    calib = calibrate(data)
-    print(calib)
-  if pi >= 10:
-    pi = 1
-  else:
-    pi += 1
-  #Append the cycle with : deliminer delimeter
-  try:
-    #UDP recepient address
-    #Work on dynamic setup protocol
-    s.sendto(data.encode('utf-8'),('192.168.1.32',3145))
-    time.sleep(.2)
-  except:
-    print('failed')
+mainloup()
+frint('this is after mainloup()')
 
