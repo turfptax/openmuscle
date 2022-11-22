@@ -127,7 +127,7 @@ while not done:
         pg.draw.line(screen,(255,255,0),lines[5][0],lines[5][1],width=2)
         pg.draw.line(screen,(255,255,0),lines[11][0],lines[11][1],width=2)
         olds = ints
-    clock.tick(60)
+    #clock.tick(60)
     x += 1
     pg.display.update()
     # Every 10 draws show text on the screen

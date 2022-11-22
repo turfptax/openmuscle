@@ -1,4 +1,4 @@
-# MARK2 5.3.2 second one made -11-4-2022
+# MARK2 5.3.2 second one made -11-20-2022
 # OpenMuscle Sensor Band 5.3.0
 # UDP send 
 # super rough working code not pythonic
@@ -13,7 +13,10 @@ import machine
 from machine import Pin, ADC, I2C
 import socket
 import network
-import ssd1306
+try:
+  import ssd1306
+except:
+  print("failed to import ssd1306")
 
 ledPIN = 15
 sclPIN = 33
@@ -119,30 +122,16 @@ for i in range(1,19):
 
 oo = 0
 for i in hall:
+
   print('hall[' + str(oo+1) + ']:',i.read())
   oo += 1
 
 frint('hall array setup[Y]')
 throw(5)
 
-def ip2dec(text):
-  h = ''
-  for i in text:
-    h += hex(int(i))[-2:] + '.'
-  return h[:-1]
-  
-
-def fifconfig(fifcon):
-  ip = 'ip:' + ip2dec(fifcon[0].split('.'))
-  subnet = 'sn:' + ip2dec(fifcon[1].split('.'))
-  gateway = 'gw:' + ip2dec(fifcon[2].split('.'))
-  fif = [ip,subnet,gateway]
-  return fif
-  
-
 #need encrypted method of store/retrieve
 #current wifi connection because of ease of use
-def initNETWORK():
+def initNETWORK(a=b_left,b=b_right):
   #need optional backup UDP repl if can't connect
   #primary and secondary networks
   #if primary then try secondary dev wifi access point
@@ -159,14 +148,10 @@ def initNETWORK():
   print('assing port and bind')
   port = 5005
   print('network config: ',wlan.ifconfig())
-  fif = fifconfig(wlan.ifconfig())
   frint('network connected[Y]')
-  frint(fif[0])
-  frint(fif[1])
-  frint(fif[2])
   s = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
   return(s,wlan)
-
+#s.bind(('192.168.103.203',port))
 
 s,wlan = initNETWORK()
 
@@ -177,6 +162,7 @@ cells = [hall[5],hall[4],hall[3],hall[16],hall[11],hall[12],hall[1],hall[2],hall
 
 #inital hall sensor ADC calibration
 # grabs first few inputs and reduces the value 
+
 def calibrate(data):
   calib = []
   better = data.split(',')
@@ -191,6 +177,7 @@ try:
   time.localtime()
   print(time.localtime())
 except:
+  frint('NTP Time [f]')
   print('failed to set NTP time')
 
 #Gather send
@@ -218,12 +205,14 @@ def mainloup(calib=calib,pi=pi,plen=plen,oled=oled,ram=ram,led=led,cells=cells,a
       exit_bool = True
     elif button_thresh < 0:
       button_thresh = 0
-    data = ''
+    data = b''
     for i in range(len(cells)):
       data += str(cells[i].read()-calib[i]) + ','
+    data += str(time.ticks_ms()) + ';'
     if pi == 0:
-      calib = calibrate(data)
-      print(calib)
+      print("No calibration just raw data")
+      #calib = calibrate(data)
+      #print(calib)
     if pi >= 10:
       pi = 1
     else:
@@ -232,18 +221,13 @@ def mainloup(calib=calib,pi=pi,plen=plen,oled=oled,ram=ram,led=led,cells=cells,a
     try:
       #UDP recepient address
       #Work on dynamic setup protocol
-      s.sendto(data.encode('utf-8'),('192.168.1.32',3145))
-      time.sleep(.2)
+      s.sendto(data,('192.168.1.32',3145))
     except:
       print('failed')
 
-start_bool = False
-frint('prs b 2 start')
-while not start_bool:
-  if b_right.value() == 0:
-    start_bool = True
-    frint('hold a 2 stop')
-  pass
 mainloup()
-frint('--END--')
+frint('this is after mainloup()')
+
+
+
 
