@@ -19,11 +19,10 @@ Current Needs:
 
 For the first prototype we are using micropython to make a proof of concept.
 
-The micropython code provided by Jeremy P Bentham on his blog https://github.com/pimoroni/pimoroni-pico/releases/tag/v0.2.6  is amazing and is used for the basis test code for the ADCs.
+The micropython code can sample at 1200 s/s across all 12 ADCs which is 100 s/s for each sensor.
 
-Not needed for current sample rate but helpful for the future!
 
-Version 5.3.0 is now available STL files to be uploaded soon. Also using Fusion360 now for main CAD software.
+Version 5.3.0 is now available STL files have been uploaded. Also using Fusion360 now for main CAD software.
 Any suggested file formats requested will be considered.
 
 For a list of the components needed to build the Open Muscle band visit: https://oprosthetics.org/open-muscle/open-muscle-components
