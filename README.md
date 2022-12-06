@@ -28,4 +28,4 @@ Any suggested file formats requested will be considered.
 For a list of the components needed to build the Open Muscle band visit: https://oprosthetics.org/open-muscle/open-muscle-components
 This is out of date but should be updated soon ETA 10-25-2022
 
-images/OpenMuscleV530Pinout-01.jpg
+<img url='images/OpenMuscleV530Pinout-01.jpg'>
