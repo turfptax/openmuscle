@@ -19,7 +19,7 @@ else:
     print('run like: python UDPserver.py <arg1: server ip> <arg2: UDPport>')
     local_ip = get_ip_address()
     port = 3145
-    print('using {0} and 3145 '.format(ip_address))
+    print('using {0} and 3145 '.format(local_ip))
 
 
 ### Create UDP socket
@@ -29,11 +29,6 @@ s.bind(server_address)
 print(f'Server Address:{local_ip} Port:{port}')
 print('Do Ctrl+c to exti the program !!')
 
-
-### File Save Setup
-filenumber = len(os.listdir('../TrainingData/CSV/'))
-data_file = open(f'../TrainingData/CSV/training_file{filenumber}.csv','w')
-writer = csv.writer(data_file)
 
 ### PYGAME SETUP
 pg.font.init()
@@ -57,6 +52,15 @@ adc_dis = 65
 pop = 4
 buff = 25
 
+def get_packet(s=s):
+    data, address = s.recvfrom(4096)
+    text = data.decode('utf-8')
+    return(text)
+    
+### File Save Setup
+filenumber = len(os.listdir('../TrainingData/CSV/'))
+file = open(f'../TrainingData/CSV/training_file{filenumber}.txt','w')
+
 
 ######## Main Loop ########
 done = False
@@ -67,8 +71,11 @@ while not done:
         elif event.type == pg.QUIT:
             data_file.close()
             done = True
+    packet = get_packet(s)
+    print('placket: ',packet)
+    file.write(packet + '/n')
     
-
+data_file.close()
 
 
 
