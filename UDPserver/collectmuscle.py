@@ -4,6 +4,9 @@ import pygame as pg
 import csv
 import sys
 import os
+import time
+import ast
+
 
 
 def get_ip_address():
@@ -52,6 +55,9 @@ adc_dis = 65
 pop = 4
 buff = 25
 
+def draw_signal(data,t,screen=screen):
+    pg.draw.line(screen,(255,0,255),data['x'],data['y'],width=1)
+
 def get_packet(s=s):
     data, address = s.recvfrom(4096)
     text = data.decode('utf-8')
@@ -61,19 +67,35 @@ def get_packet(s=s):
 filenumber = len(os.listdir('../TrainingData/CSV/'))
 file = open(f'../TrainingData/CSV/training_file{filenumber}.txt','w')
 
+# Time Axis Counters
+t0 = time.time()
+delta_time = 0
 
 ######## Main Loop ########
 done = False
 while not done:
     for event in pg.event.get():
         if event.type == pg.KEYDOWN:
-            if event.key == pg.K_ESCAPE: done = True
+            if event.key == pg.K_ESCAPE:
+                done = True
+                data_file.close()
         elif event.type == pg.QUIT:
             data_file.close()
             done = True
     packet = get_packet(s)
-    print('placket: ',packet)
-    file.write(packet + '/n')
+    print('packet: ',packet)
+    pack = ast.literal_eval(packet)
+    pack['rec_time'] = time.time()-t0
+    file.write(str(pack) + '\n')
+    # Draw Screen
+    #
+    if 'OM-Band' in pack['id']:
+        device = 'OpenMuscle Band'
+    elif 'OM-LASK' in pack['id']:
+        device = 'OpenMuscle LASK'
+    pg.display.update()
+    # End Draw Screen
+    
     
 data_file.close()
 
