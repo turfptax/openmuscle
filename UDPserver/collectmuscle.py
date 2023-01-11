@@ -56,7 +56,7 @@ adc_dis = 65
 pop = 4
 buff = 25
 
-def draw_signal(x0,y0,x,y,position,screen=screen):
+def draw_signal(x0,y0,x,y,position,color,screen=screen):
     height = 40
     max_samp = 6500
     # Row Multiply by position # * pixel height
@@ -65,15 +65,32 @@ def draw_signal(x0,y0,x,y,position,screen=screen):
     # Left Padding
     x += 50
     x0 += 50
-    pg.draw.line(screen,(255,0,255),(x0,y0),(x,y),width=1)
+    pg.draw.line(screen,color,(x0,y0),(x,y),width=1)
+
+def draw_text(l,b,screen=screen):
+    position = 2
+    surfaces = []
+    for i,y in enumerate(l['data']):
+        r = pg.Rect(2,40*position,255,24)
+        screen.fill((0,0,0), r)
+        surface = my_font.render('LASK: '+str(position) +': '+str(y),False,(127,255,255))
+        screen.blit(surface,(0,40*position))
+        position += 1
+    for i,y in enumerate(b['data']):
+        r = pg.Rect(2,40*position,255,24)
+        screen.fill((0,0,0), r)
+        surface = my_font.render('BAND: '+str(position) +': '+str(y),False,(127,127,255))
+        screen.blit(surface,(0,40*position))
+        position += 1
+    
 
 def draw_lask(packet,last_packet=last_lask_packet):
     global count
     global last_lask_packet
-    position = 0
+    position = 2
     if packet['rec_time']-last_packet['rec_time']>.1:
         for i,y in enumerate(last_packet['data']):
-            draw_signal(count-1,y,count,packet['data'][i],position)
+            draw_signal(count-1,y,count,packet['data'][i],position,(200,255,255))
             position += 1
         last_lask_packet = packet
     
@@ -82,10 +99,10 @@ def draw_lask(packet,last_packet=last_lask_packet):
 def draw_band(packet,last_packet=last_band_packet):
     global count
     global last_band_packet
-    position = 4
+    position = 6
     if packet['rec_time']-last_packet['rec_time']>.1:
         for i,y in enumerate(last_packet['data']):
-            draw_signal(count-1,y,count,packet['data'][i],position)
+            draw_signal(count-1,y,count,packet['data'][i],position,(200,200,255))
             position += 1
         last_band_packet = packet
     
@@ -137,6 +154,8 @@ while not done:
     if count > 750:
         screen.fill(0)
         count = 0
+    if not count % 100:
+        draw_text(last_lask_packet,last_band_packet)
     # End Draw Screen
     
     
