@@ -7,8 +7,8 @@ import os
 import time
 import ast
 
-last_lask_packet = {'id': 'OM-LASK4', 'time': (2023, 1, 8, 22, 37, 28, 6, 8), 'data': [-591, -667, -747, -457], 'ticks': 53249, 'rec_time': 0.0001}
-last_band_packet = {'id': 'OM-Band12', 'time': (2023, 1, 8, 22, 37, 28, 6, 8), 'data': [4928, 4828, 4824, 4992, 4673, 4897, 4993, 4805, 5020, 6829, 4400, 5349], 'ticks': 356392, 'rec_time': 0.0001}
+last_lask_packet = {'id': 'OM-LASK4', 'time': (2023, 1, 8, 22, 37, 28, 6, 8), 'data': [3, 1, 4, 5], 'ticks': 53249, 'rec_time': 0.0001}
+last_band_packet = {'id': 'OM-Band12', 'time': (2023, 1, 8, 22, 37, 28, 6, 8), 'data': [5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000], 'ticks': 2, 'rec_time': 0.0001}
 
 def get_ip_address():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -59,9 +59,10 @@ buff = 25
 def draw_signal(x0,y0,x,y,position,color,screen=screen):
     height = 40
     max_samp = 6500
+    min_samp = 4000
     # Row Multiply by position # * pixel height
-    y0 = int((y0/max_samp)*40)+(position*40)
-    y = int((y/max_samp)*40)+(position*40)
+    y0 = int(((y0-min_samp)/(max_samp-min_samp))*40)+(position*40)
+    y = int(((y-min_samp)/(max_samp-min_samp))*40)+(position*40)
     # Left Padding
     x += 50
     x0 += 50
@@ -84,25 +85,25 @@ def draw_text(l,b,screen=screen):
         position += 1
     
 
-def draw_lask(packet,last_packet=last_lask_packet):
+def draw_lask(packet):
     global count
     global last_lask_packet
     position = 2
-    if packet['rec_time']-last_packet['rec_time']>.1:
-        for i,y in enumerate(last_packet['data']):
-            draw_signal(count-1,y,count,packet['data'][i],position,(200,255,255))
+    if packet['rec_time']-last_lask_packet['rec_time']>.01:
+        for i,y in enumerate(last_last_packet['data']):
+            draw_signal(count-2,y,count,packet['data'][i],position,(200,255,255))
             position += 1
         last_lask_packet = packet
     
     
 
-def draw_band(packet,last_packet=last_band_packet):
+def draw_band(packet):
     global count
     global last_band_packet
     position = 6
-    if packet['rec_time']-last_packet['rec_time']>.1:
-        for i,y in enumerate(last_packet['data']):
-            draw_signal(count-1,y,count,packet['data'][i],position,(200,200,255))
+    if packet['rec_time']-last_band_packet['rec_time']>.01:
+        for i,y in enumerate(last_band_packet['data']):
+            draw_signal(count-2,y,count,packet['data'][i],position,(200,200,255))
             position += 1
         last_band_packet = packet
     

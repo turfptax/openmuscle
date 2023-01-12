@@ -1,4 +1,7 @@
-# MARK2 5.3.2 second one made -11-20-2022
+
+
+
+# MARK2 5.3.2 second one made -11-4-2022
 # OpenMuscle Sensor Band 5.3.0
 # UDP send 
 # super rough working code not pythonic
@@ -112,19 +115,17 @@ else:
   print('oledINIT failed')
 
 #Setup basic ADC pin read array test
-print('setting up 4 hall array: hall[0-18]')
-hall = []
+print('hall array: hall[0-18] hall[0] is None so pins match')
+hall = [None]
 for i in range(1,19):
   temp = machine.ADC(Pin(i))
   #important to read the value properly
   temp.atten(ADC.ATTN_11DB)
   hall.append(temp)
 
-oo = 0
-for i in hall:
 
-  print('hall[' + str(oo+1) + ']:',i.read())
-  oo += 1
+for i,x in enumerate(hall):
+  print(i,x)
 
 frint('hall array setup[Y]')
 throw(5)
@@ -146,7 +147,7 @@ def initNETWORK(a=b_left,b=b_right):
       pass
 
   print('assing port and bind')
-  port = 5005
+  port = 3145
   print('network config: ',wlan.ifconfig())
   frint('network connected[Y]')
   s = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
@@ -158,17 +159,16 @@ s,wlan = initNETWORK()
 #Version 5.3.0 miswired second two elements on hardware 0-11
 # 0-5 top circular band on hexigon 1 per cell
 # 6-11 bottom circular band on hexigon 1 per cell
-cells = [hall[5],hall[4],hall[3],hall[16],hall[11],hall[12],hall[1],hall[2],hall[0],hall[17],hall[8],hall[9]]
+# 5.4.2 6x2 left to right also works for 12x1 left to right
+cells = [hall[6],hall[2],hall[5],hall[3],hall[4],hall[1],hall[16],hall[17],hall[12],hall[9],hall[13],hall[10]]
 
 #inital hall sensor ADC calibration
 # grabs first few inputs and reduces the value 
 
 def calibrate(data):
   calib = []
-  better = data.split(',')
-  for x in better:
-    if x:
-        calib.append(int(x))
+  for x in data:
+    calib.append(int(x))
   return calib
 
 try:
@@ -205,10 +205,13 @@ def mainloup(calib=calib,pi=pi,plen=plen,oled=oled,ram=ram,led=led,cells=cells,a
       exit_bool = True
     elif button_thresh < 0:
       button_thresh = 0
-    data = b''
+    packet = {}
+    data = []
     for i in range(len(cells)):
-      data += str(cells[i].read()-calib[i]) + ','
-    data += str(time.ticks_ms()) + ';'
+      data.append(cells[i].read()-calib[i])
+    packet["id"] = "OM-Band12"
+    packet["ticks"] = time.ticks_ms()
+    packet["time"] = time.localtime()
     if pi == 0:
       print("No calibration just raw data")
       #calib = calibrate(data)
@@ -218,15 +221,24 @@ def mainloup(calib=calib,pi=pi,plen=plen,oled=oled,ram=ram,led=led,cells=cells,a
     else:
       pi += 1
     #Append the cycle with : deliminer delimeter
+    packet['data'] = data
+    raw_data = str(packet).encode('utf-8')
     try:
       #UDP recepient address
       #Work on dynamic setup protocol
-      s.sendto(data,('192.168.1.32',3145))
+      s.sendto(raw_data,('192.168.1.32',3145))
     except:
       print('failed')
 
 mainloup()
 frint('this is after mainloup()')
+
+
+
+
+
+
+
 
 
 
