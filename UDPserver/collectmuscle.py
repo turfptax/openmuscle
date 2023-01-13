@@ -90,7 +90,7 @@ def draw_lask(packet):
     global last_lask_packet
     position = 2
     if packet['rec_time']-last_lask_packet['rec_time']>.01:
-        for i,y in enumerate(last_last_packet['data']):
+        for i,y in enumerate(last_lask_packet['data']):
             draw_signal(count-2,y,count,packet['data'][i],position,(200,255,255))
             position += 1
         last_lask_packet = packet
