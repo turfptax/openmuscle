@@ -13,6 +13,10 @@ bpps = 0
 last_lask_packet = {'id': 'OM-LASK4', 'time': (2023, 1, 8, 22, 37, 28, 6, 8), 'data': [3, 1, 4, 5], 'ticks': 53249, 'rec_time': 0.0001}
 last_band_packet = {'id': 'OM-Band12', 'time': (2023, 1, 8, 22, 37, 28, 6, 8), 'data': [5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000], 'ticks': 2, 'rec_time': 0.0001}
 
+
+max_samp = 6500
+min_samp = 4000
+
 def get_ip_address():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.connect(("8.8.8.8",80))
@@ -61,14 +65,28 @@ buff = 25
 
 def draw_signal(x0,y0,x,y,position,color,screen=screen):
     height = 40
-    max_samp = 6500
-    min_samp = 4000
+    global max_samp
+    global min_samp
+    if y0 < max_samp and y0 >= min_samp+150 and y0 < max_samp - 100:
+        max_samp -= 100
+    elif y0 > max_samp:
+        max_samp = y0
+    if y0 > min_samp and y0 <= max_samp+150 and y0 > min_samp +100:
+        min_samp += 100
     # Row Multiply by position # * pixel height
     y0 = int(((y0-min_samp)/(max_samp-min_samp))*40)+(position*40)
     y = int(((y-min_samp)/(max_samp-min_samp))*40)+(position*40)
     # Left Padding
     x += 50
     x0 += 50
+    if y < max_samp and y >= min_samp+150 and y < max_samp - 100:
+        max_samp -= 100
+    elif y > max_samp:
+        max_samp = y
+    if y > min_samp and y <= max_samp+150 and y > min_samp +100:
+        min_samp += 100
+    
+        
     pg.draw.line(screen,color,(x0,y0),(x,y),width=1)
 
 def draw_text(l,b,screen=screen):
@@ -119,11 +137,13 @@ def draw_band(packet):
 def text_gui(screen=screen):
     global lpps
     global bpps
+    global max_samp
+    global min_samp
     surface = my_font.render('OpenMuscle Collect Data',False,(255,255,255))
     screen.blit(surface,(0,0))
     r = pg.Rect(2,40,800,24)
     screen.fill((0,0,0), r)
-    surface = my_font.render(f'LASK ldp:{lpps} Band ldp:{bpps} (last draw packet)',False,(255,200,200))
+    surface = my_font.render(f'LASK ldp:{lpps} Band ldp:{bpps} SampMAX:{max_samp} SampMIN:{min_samp}',False,(255,200,200))
     screen.blit(surface,(0,40))
     
 ### File Save Setup
