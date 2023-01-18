@@ -175,7 +175,7 @@ done = False
 while not done:
     for event in pg.event.get():
         if event.type == pg.QUIT:
-            data_file.close()
+            file.close()
             done = True
     pack = get_packet(s)
     if pack:
@@ -201,7 +201,7 @@ while not done:
     
     
     
-data_file.close()
+file.close()
 
 
 
