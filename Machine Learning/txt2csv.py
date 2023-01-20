@@ -8,9 +8,6 @@ lask = []
 band = []
 last_pair = None
 
-
-
-
 def send_chunk(data):
     global lask
     global band
@@ -26,7 +23,6 @@ def send_chunk(data):
             temp.append(i)
         temp.append(data['rec_time'])
         band.append(temp)
-
 
 def check_chunk():
     global lask
@@ -51,9 +47,6 @@ def check_chunk():
         lask = lask[-10:]
     if not len(found) % 1000:
         print('found ammount: ',len(found))
-
-    
-
 
 text_file = open('datasetONE.txt','r')
 csv_file = open('datasetONE.csv','w')
