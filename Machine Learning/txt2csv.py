@@ -3,7 +3,7 @@
 import csv
 
 
-
+found = []
 lask = []
 band = []
 last_pair = None
@@ -27,12 +27,14 @@ def send_chunk(data):
         temp.append(data['rec_time'])
         band.append(temp)
 
+
 def check_chunk():
     global lask
     global band
-    found = []
-    dindexL []
-    dindexB []
+    global last_pair
+    global found
+    dindexL =[]
+    dindexB =[]
     if len(band) > 10:
         for i,x in enumerate(band):
             time = x[-1]
@@ -40,13 +42,16 @@ def check_chunk():
                 if abs(z[-1] - time) < .02:
                     found.append([x,z])
                     last_pair = z[-1]
-    for i in dindexL:
-        del lask[i]
+                    del lask[o]
     for i in dindexB:
         del band[i]
     if len(band) > 20:
         band = band[-10:]
-    return found
+    if len(lask) > 20:
+        lask = lask[-10:]
+    if not len(found) % 1000:
+        print('found ammount: ',len(found))
+
     
 
 
@@ -58,11 +63,17 @@ writer.writerow([1,2,3,4,5,6,7,8,9,10,11,12,'receive_time',1,2,3,4,'receive_time
 matched_pairs = []                    
 for i in text_file.read().split('\n'):
     #print(i)
-    j = eval(i)
+    try:
+        j = eval(i)
+    except:
+        print(i,'failed to eval()')
     send_chunk(j)
-    found = check_chunk()
-    for i in found:
-        writer.writerow(i[0] + i[1])
+    check_chunk()
+
+print('finished matching')
+
+for i in found:
+    writer.writerow(i[0] + i[1])
 
 csv_file.close()
         
