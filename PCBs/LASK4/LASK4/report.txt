@@ -1,0 +1,11 @@
+Plotted to 'C:\Users\ToryMoghadam\OneDrive - Rural Health Development\Documents\GitHub\openmuscle\PCBs\LASK4\LASK4\LASK4-GERBER\LASK4-F_Cu.gbr'.
+Plotted to 'C:\Users\ToryMoghadam\OneDrive - Rural Health Development\Documents\GitHub\openmuscle\PCBs\LASK4\LASK4\LASK4-GERBER\LASK4-B_Cu.gbr'.
+Plotted to 'C:\Users\ToryMoghadam\OneDrive - Rural Health Development\Documents\GitHub\openmuscle\PCBs\LASK4\LASK4\LASK4-GERBER\LASK4-F_Paste.gbr'.
+Plotted to 'C:\Users\ToryMoghadam\OneDrive - Rural Health Development\Documents\GitHub\openmuscle\PCBs\LASK4\LASK4\LASK4-GERBER\LASK4-B_Paste.gbr'.
+Plotted to 'C:\Users\ToryMoghadam\OneDrive - Rural Health Development\Documents\GitHub\openmuscle\PCBs\LASK4\LASK4\LASK4-GERBER\LASK4-F_Silkscreen.gbr'.
+Plotted to 'C:\Users\ToryMoghadam\OneDrive - Rural Health Development\Documents\GitHub\openmuscle\PCBs\LASK4\LASK4\LASK4-GERBER\LASK4-B_Silkscreen.gbr'.
+Plotted to 'C:\Users\ToryMoghadam\OneDrive - Rural Health Development\Documents\GitHub\openmuscle\PCBs\LASK4\LASK4\LASK4-GERBER\LASK4-F_Mask.gbr'.
+Plotted to 'C:\Users\ToryMoghadam\OneDrive - Rural Health Development\Documents\GitHub\openmuscle\PCBs\LASK4\LASK4\LASK4-GERBER\LASK4-B_Mask.gbr'.
+Plotted to 'C:\Users\ToryMoghadam\OneDrive - Rural Health Development\Documents\GitHub\openmuscle\PCBs\LASK4\LASK4\LASK4-GERBER\LASK4-Edge_Cuts.gbr'.
+Created Gerber job file 'C:\Users\ToryMoghadam\OneDrive - Rural Health Development\Documents\GitHub\openmuscle\PCBs\LASK4\LASK4\LASK4-GERBER\LASK4-job.gbrjob'.
+Info: Done.
