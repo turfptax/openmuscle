@@ -1,0 +1,21 @@
+# Need to use virtual environment to run the code
+# Note created 3-1-2023 - TURFPTAx
+# using book: HANDS-ON MACHINE LEARNING WITH SCIKIT-LEARN, KERAS & TENSORFLOW
+# O'REILLY 2nd Edition
+# Instructions on page 43 and 44
+
+# Virtual environment located on my F drive
+F:\TTXONE\OneDrive - TURFPTAx\Documents\GitHub\openmuscle\Machine Learning
+
+# Instructions to activate virtual environment after setup:
+
+cd $ML_PATH
+source my_env/bin/activate # on Linux or macOS
+.\my_env\Scripts\activate  # on Windows
+
+- name of envelope or my_env: om_env
+
+# On my windows machine use: .\om_env\Scripts\activate
+
+
+
