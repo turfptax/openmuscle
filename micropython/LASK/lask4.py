@@ -1,4 +1,9 @@
 
+
+
+
+
+
 #OpenMuscle - OpenHand V1.0.0
 # 4 Finger Target Value Acquirer
 
@@ -193,12 +198,13 @@ def drawMenu():
   frint('OM-LASK4 Menu')
 
 
-def fastRead(s=s):
+def fastRead(cells=cells):
+  global s
   packet = {}
   data = []
   for i in range(len(cells)):
       data.append(cells[i].read()-calib[i])
-  packet['id'] = '4-soma'
+  packet['id'] = 'OM-LASK4'
   packet['ticks'] = time.ticks_ms()
   packet['time'] = time.localtime()
   #Append the cycle with : deliminer delimeter
@@ -206,11 +212,11 @@ def fastRead(s=s):
   raw_data = str(packet).encode('utf-8')
   try:
     #UDP recepient address
-    #Work on dynamic setup protocol
     s.sendto(raw_data,('192.168.1.32',3145))
     status = str(packet)
   except:
     status = 'failed'
+  #return(status)
 
 
 def mainMenu():
@@ -219,6 +225,8 @@ def mainMenu():
   global up
   global down
   global oled
+  global s
+  global wlan
   menu = [['[0] Wifi Connect',0,0],['[1] Callibrate',1,1],['[2] UDP Send',2,1],['[3] Exit',3,1]]
   end = False
   while not end:
@@ -228,8 +236,6 @@ def mainMenu():
       oled.text(x[0],0,i*8,x[2])
     oled.show()
     if start.value() == 0 and menu[0][2] == 0:
-      global s
-      global wlan
       frint('init network')
       s,wlan = initNETWORK()
       cells = [hall[3],hall[2],hall[1],hall[0]]
@@ -244,6 +250,11 @@ def mainMenu():
       return
     if start.value() == 0 and menu[3][2] == 0:
       return
+    if start.value() == 0 and menu[2][2] == 0:
+      while True:
+        fastRead()
+        if select.value() == 0:
+          return
     if start.value() == 0 and menu[1][2] == 0:
         callibrate()
         return
@@ -292,6 +303,12 @@ def mainloup(pi=pi,plen=plen,led=led,cells=cells,start=start,select=select,up=up
 
 mainloup()
 print('this is after mainloup()')
+
+
+
+
+
+
 
 
 
