@@ -1,0 +1,22 @@
+Plotted to 'C:\Users\ToryMoghadam\TMO-GMO-FILES\CELL0\OpenMuscle5\OpenMuscle5\OM5-Gerber\OpenMuscle5-F_Cu.gbr'.
+Plotted to 'C:\Users\ToryMoghadam\TMO-GMO-FILES\CELL0\OpenMuscle5\OpenMuscle5\OM5-Gerber\OpenMuscle5-B_Cu.gbr'.
+Plotted to 'C:\Users\ToryMoghadam\TMO-GMO-FILES\CELL0\OpenMuscle5\OpenMuscle5\OM5-Gerber\OpenMuscle5-F_Paste.gbr'.
+Plotted to 'C:\Users\ToryMoghadam\TMO-GMO-FILES\CELL0\OpenMuscle5\OpenMuscle5\OM5-Gerber\OpenMuscle5-B_Paste.gbr'.
+Plotted to 'C:\Users\ToryMoghadam\TMO-GMO-FILES\CELL0\OpenMuscle5\OpenMuscle5\OM5-Gerber\OpenMuscle5-F_Silkscreen.gbr'.
+Plotted to 'C:\Users\ToryMoghadam\TMO-GMO-FILES\CELL0\OpenMuscle5\OpenMuscle5\OM5-Gerber\OpenMuscle5-B_Silkscreen.gbr'.
+Plotted to 'C:\Users\ToryMoghadam\TMO-GMO-FILES\CELL0\OpenMuscle5\OpenMuscle5\OM5-Gerber\OpenMuscle5-F_Mask.gbr'.
+Plotted to 'C:\Users\ToryMoghadam\TMO-GMO-FILES\CELL0\OpenMuscle5\OpenMuscle5\OM5-Gerber\OpenMuscle5-B_Mask.gbr'.
+Plotted to 'C:\Users\ToryMoghadam\TMO-GMO-FILES\CELL0\OpenMuscle5\OpenMuscle5\OM5-Gerber\OpenMuscle5-Edge_Cuts.gbr'.
+Created Gerber job file 'C:\Users\ToryMoghadam\TMO-GMO-FILES\CELL0\OpenMuscle5\OpenMuscle5\OM5-Gerber\OpenMuscle5-job.gbrjob'.
+Plotted to 'C:\Users\ToryMoghadam\TMO-GMO-FILES\CELL0\OpenMuscle5\OpenMuscle5\OM5-Gerber\OpenMuscle5-F_Cu.gbr'.
+Plotted to 'C:\Users\ToryMoghadam\TMO-GMO-FILES\CELL0\OpenMuscle5\OpenMuscle5\OM5-Gerber\OpenMuscle5-B_Cu.gbr'.
+Plotted to 'C:\Users\ToryMoghadam\TMO-GMO-FILES\CELL0\OpenMuscle5\OpenMuscle5\OM5-Gerber\OpenMuscle5-F_Paste.gbr'.
+Plotted to 'C:\Users\ToryMoghadam\TMO-GMO-FILES\CELL0\OpenMuscle5\OpenMuscle5\OM5-Gerber\OpenMuscle5-B_Paste.gbr'.
+Plotted to 'C:\Users\ToryMoghadam\TMO-GMO-FILES\CELL0\OpenMuscle5\OpenMuscle5\OM5-Gerber\OpenMuscle5-F_Silkscreen.gbr'.
+Plotted to 'C:\Users\ToryMoghadam\TMO-GMO-FILES\CELL0\OpenMuscle5\OpenMuscle5\OM5-Gerber\OpenMuscle5-B_Silkscreen.gbr'.
+Plotted to 'C:\Users\ToryMoghadam\TMO-GMO-FILES\CELL0\OpenMuscle5\OpenMuscle5\OM5-Gerber\OpenMuscle5-F_Mask.gbr'.
+Plotted to 'C:\Users\ToryMoghadam\TMO-GMO-FILES\CELL0\OpenMuscle5\OpenMuscle5\OM5-Gerber\OpenMuscle5-B_Mask.gbr'.
+Plotted to 'C:\Users\ToryMoghadam\TMO-GMO-FILES\CELL0\OpenMuscle5\OpenMuscle5\OM5-Gerber\OpenMuscle5-Edge_Cuts.gbr'.
+Created Gerber job file 'C:\Users\ToryMoghadam\TMO-GMO-FILES\CELL0\OpenMuscle5\OpenMuscle5\OM5-Gerber\OpenMuscle5-job.gbrjob'.
+Info: Done.
+Info: Done.

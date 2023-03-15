@@ -1,0 +1,80 @@
+
+(rules PCB OpenMuscle5
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 3999)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clear 200.2)
+    (clear 125.0 (type smd_to_turn_gap))
+    (clear 50.0 (type smd_smd))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (class default
+    "Net-(E1-Pad133)" "Net-(A1-Pad2)" "Net-(A1-Pad1)" "unconnected-(Ch1-Pad1)" "Net-(A4-Pad1)" "Net-(A2-Pad2)" "Net-(A3-Pad2)" "Net-(A4-Pad2)"
+    "Net-(A5-Pad2)" "Net-(A6-Pad2)" "Net-(Ch1-Pad3)" "Net-(Ch1-Pad4)" "unconnected-(Ch1-Pad2)" "unconnected-(E1-Pad0)" "Net-(E1-Pad1)" "Net-(E1-Pad2)"
+    "Net-(E1-Pad3)" "Net-(E1-Pad4)" "Net-(E1-Pad5)" "Net-(E1-Pad6)" "Net-(E1-Pad7)" "Net-(E1-Pad14)" "Net-(E1-Pad15)" "Net-(E1-Pad16)"
+    "Net-(E1-Pad17)" "Net-(E1-Pad18)" "unconnected-(E1-Pad21)" "Net-(E1-Pad33)" "Net-(E1-Pad34)" "unconnected-(E1-Pad37)" "unconnected-(E1-Pad38)" "unconnected-(E1-Pad39)"
+    "unconnected-(E1-Pad40)" "Net-(J1-Pad10)" "Net-(Ch1-Pad6)" "Net-(E1-Pad150)" "Net-(E1-Pad35)" "Net-(E1-Pad36)"
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
