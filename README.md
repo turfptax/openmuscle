@@ -13,9 +13,9 @@ We are working on a silicon nipple spring for the 6th version of Open Muscle to 
 
 ## **Roadmap**
 
- - [x] Create an open-source hardware forearm bracelet
- - [x] create the open-source software to acquire the training data
- - [ ] build a hand gesture detection device for data **target values**
+ - [x] Create an open-source hardware forearm bracelet :OM12 
+ - [x] create the open-source software to acquire the training data :UDPserver
+ - [x] build a hand gesture detection device for data **target values** :LASK4
  - [ ] Create an open-source server to store training data and negotiate connections
  - [ ] Raise awareness and ask people to help by providing training data
 
