@@ -35,23 +35,15 @@ We are working on a silicon nipple spring for the 6th version of Open Muscle to 
 5. Students
 6. Crowd Source Data Acquisition (wear the bracelet)
 
-## What ChatGPT says we need to do:
-To label machine learning regression training data with target values, you will need to follow these steps:
+## Currently working on OM24
+Open Muscle 24 suggested features
+1. 24 Pressure sensors (hall effect / magnet) pairs
+2. Dedicated ADCs sampled at ~ 100s/s each
+3. Dedicated Analog ADO for the sensors
+4. Programmed in C++ 
+5. Bluetooth
+6. Phone Application to gather biometric data
+7. LASK system integration for HUD and
+8. 1000mah battery or enough charge to last for 8-16hrs of use
 
-1.  Identify the input variables that you will use to train your model. These are also known as the features or predictors.
-    
-2.  Collect the training data for these input variables. This may involve collecting data from a variety of sources, such as sensors, databases, or user input.
-    
-3.  Determine the target variable that you want to predict with your model. This is the variable that you will be trying to predict based on the input variables.
-    
-4.  For each training example, assign a target value to the target variable. This value should correspond to the value of the target variable that you want your model to predict for that example.
-    
-5.  Split your training data into a training set and a validation set. The training set will be used to train your model, while the validation set will be used to evaluate the model's performance.
-    
-6.  Use your training data to train your machine learning model. There are many different algorithms and approaches that you can use for this, including linear regression, decision trees, and neural networks.
-    
-7.  Use your validation set to evaluate the performance of your model. This will allow you to determine how well the model is able to predict the target values for the validation data.
-    
-8.  If the model's performance is not satisfactory, you may need to go back and adjust your model or collect more training data.
 
-<img url='images/OpenMuscleV530Pinout-01.jpg'>
