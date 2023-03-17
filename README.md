@@ -70,7 +70,6 @@ Open Muscle 24 suggested features
 ![Alt text](https://github.com/turfptax/openmuscle/blob/main/images/OM-Band12%205-3-0-02.jpg?raw=true "OpenMuscle12")
 # LASK4 Label System
 ![Alt text](https://github.com/turfptax/openmuscle/blob/main/images/LASK4v2-01.jpg?raw=true "OpenMuscle12")
-
-
+View the LASK4 Github Repository for more info: https://github.com/turfptax/lask4
 
 
