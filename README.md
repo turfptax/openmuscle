@@ -11,7 +11,26 @@ Open Muscle was designed to be the least expensive, highest signal to noise rati
 The physical movement of muscles detected by a hall sensor and sprung magnet fit these requirements.
 We are working on a silicon nipple spring for the 6th version of Open Muscle to further reduce the cost, complexity, and bulkiness of version 5.
 
+# Current Working Version of Open Muscle:
+## OpenMuscle 12 or OM12
+Open Muscle 12 uses the built in ADCs on an ESP32-S2 for all 12 sensors. It can send 1200 s/s over UDP to the UDP python server that picks it up. 
+- 12 Hall Effect Sensors
+- 6 Cells of 2 Sensors Each
+- PCB 5.3.0
+- ESP32-S2 Microcontroller
+- MicroPython
+
+## LASK4 or LASK4 Version 2
+LASK4 is the labeling device that obtains the finger movement labels for the feature data obtained from OM12. It currently does not detect thumb movements. Next version to include the thumb for Version 3. Check out the LASK4 Repository for more info:
+- 4 Piston Tubes
+- OLED Screen
+- 4 Push buttons
+- ESP32-S2 Microcontroller
+- MicroPython
+
 ## **Roadmap**
+
+We have met a few goals!
 
  - [x] Create an open-source hardware forearm bracelet :OM12 
  - [x] create the open-source software to acquire the training data :UDPserver
