@@ -65,4 +65,4 @@ Open Muscle 24 suggested features
 7. LASK system integration for HUD and
 8. 1000mah battery or enough charge to last for 8-16hrs of use
 
-
+![Alt text](https://github.com/turfptax/openmuscle/blob/main/images/OM-Band12%205-3-0-01.jpg?raw=true "OpenMuscle12")
