@@ -8,7 +8,7 @@ LASK, Open Muscle's counterpart, is an open source finger movement **somatosenso
 
 ## Why use hall sensors instead of EMG sensors?
 Open Muscle was designed to be the least expensive, highest signal to noise ratio, and least complex deployment device that is able to detect forearm muscle contractions.
-The physical movement of muscles detected by a hall sensor and sprung magnet fit these requirements.
+The physical movement of muscles detected by a hall sensor and magnet pairs fit these requirements. Since the frequency requirements of physical movement or pressure does not require a high sampling rate it further reduces the cost of the sensor hardware.
 We are working on a silicon nipple spring for the 6th version of Open Muscle to further reduce the cost, complexity, and bulkiness of version 5.
 
 # Current Working Version of Open Muscle:
