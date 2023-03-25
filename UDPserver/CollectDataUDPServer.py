@@ -67,26 +67,24 @@ def draw_signal(x0,y0,x,y,position,color,screen=screen):
     height = 40
     global max_samp
     global min_samp
-    if y0 < max_samp and y0 >= min_samp+150 and y0 < max_samp - 100:
-        max_samp -= 100
-    elif y0 > max_samp:
-        max_samp = y0
-    if y0 > min_samp and y0 <= max_samp+150 and y0 > min_samp +100:
-        min_samp += 100
+    #if y0 < max_samp and y0 >= min_samp+150 and y0 < max_samp - 100:
+    #    max_samp -= 100
+    #elif y0 > max_samp:
+    #    max_samp = y0
+    #if y0 > min_samp and y0 <= max_samp+150 and y0 > min_samp +100:
+    #    min_samp += 100
     # Row Multiply by position # * pixel height
     y0 = int(((y0-min_samp)/(max_samp-min_samp))*40)+(position*40)
     y = int(((y-min_samp)/(max_samp-min_samp))*40)+(position*40)
     # Left Padding
     x += 50
     x0 += 50
-    if y < max_samp and y >= min_samp+150 and y < max_samp - 100:
-        max_samp -= 100
-    elif y > max_samp:
-        max_samp = y
-    if y > min_samp and y <= max_samp+150 and y > min_samp +100:
-        min_samp += 100
-    
-        
+    #if y < max_samp and y >= min_samp+150 and y < max_samp - 100:
+    #    max_samp -= 100
+    #elif y > max_samp:
+    #    max_samp = y
+    #if y > min_samp and y <= max_samp+150 and y > min_samp +100:
+    #    min_samp += 100   
     pg.draw.line(screen,color,(x0,y0),(x,y),width=1)
 
 def draw_text(l,b,screen=screen):
