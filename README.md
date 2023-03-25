@@ -8,7 +8,7 @@ LASK, Open Muscle's counterpart, is an open source finger movement **somatosenso
 
 ## Why use hall sensors instead of EMG sensors?
 Open Muscle was designed to be the least expensive, highest signal to noise ratio, and least complex deployment device that is able to detect forearm muscle contractions.
-The physical movement of muscles detected by a hall sensor and sprung magnet fit these requirements.
+The physical movement of muscles detected by a hall sensor and magnet pairs fit these requirements. Since the frequency requirements of physical movement or pressure does not require a high sampling rate it further reduces the cost of the sensor hardware.
 We are working on a silicon nipple spring for the 6th version of Open Muscle to further reduce the cost, complexity, and bulkiness of version 5.
 
 # Current Working Version of Open Muscle:
@@ -64,5 +64,12 @@ Open Muscle 24 suggested features
 6. Phone Application to gather biometric data
 7. LASK system integration for HUD and
 8. 1000mah battery or enough charge to last for 8-16hrs of use
+
+# Wiring the OM12
+![Alt text](https://github.com/turfptax/openmuscle/blob/main/images/OM-Band12%205-3-0-01.jpg?raw=true "OpenMuscle12")
+![Alt text](https://github.com/turfptax/openmuscle/blob/main/images/OM-Band12%205-3-0-02.jpg?raw=true "OpenMuscle12")
+# LASK4 Label System
+![Alt text](https://github.com/turfptax/openmuscle/blob/main/images/LASK4v2-01.jpg?raw=true "OpenMuscle12")
+View the LASK4 Github Repository for more info: https://github.com/turfptax/lask4
 
 
