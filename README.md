@@ -6,6 +6,8 @@ Open Muscle is designed to provide biometric machine learning training data for 
 
 LASK, Open Muscle's counterpart, is an open source finger movement **somatosensor** (It detects the physical movement of the fingers). **#better word for this needed**
 
+![Alt text](https://github.com/turfptax/openmuscle/blob/main/images/Results-OM12-Jan-01.jpg?raw=true "OpenMuscle12")
+
 ## Why use hall sensors instead of EMG sensors?
 Open Muscle was designed to be the least expensive, highest signal to noise ratio, and least complex deployment device that is able to detect forearm muscle contractions.
 The physical movement of muscles detected by a hall sensor and magnet pairs fit these requirements. Since the frequency requirements of physical movement or pressure does not require a high sampling rate it further reduces the cost of the sensor hardware.
