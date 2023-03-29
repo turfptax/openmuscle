@@ -19,11 +19,11 @@ def evaluate_model(y_true, y_pred):
     print(f'Mean Absolute Error: {mae}')
     
 
-data = pd.read_csv('datasetTWO.csv')
+data = pd.read_csv('March2823training_file9.csv')
 
-input_features = ['OM1','OM2','OM3','OM4','OM5','OM6','OM7','OM8','OM9','OM10','OM11','OM12','OM_time']
+input_features = ['OM1','OM2','OM3','OM4','OM5','OM6','OM7','OM8','OM9','OM10','OM11','OM12','om_time']
 X = data[input_features]
-input_labels = ['LASK1','LASK2','LASK3','LASK4','LASK_time']
+input_labels = ['LASK1','LASK2','LASK3','LASK4','lask_time']
 y = data[input_labels]
 
 # Split the data into training and testing sets, and scale the input features
@@ -38,7 +38,7 @@ model = MultiOutputRegressor(base_model)
 model.fit(X_train, y_train)
 
 # Print the evaluation metric(s) to the screen
-with open('model-mi-mo-march-dst5.pkl', 'wb') as f:
+with open('OM12-March-23.pkl', 'wb') as f:
     pickle.dump(model, f)
 
 

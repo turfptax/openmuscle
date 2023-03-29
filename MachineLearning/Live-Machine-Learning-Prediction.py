@@ -18,7 +18,7 @@ from sklearn.multioutput import MultiOutputRegressor
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 
 # Load the saved model from the file
-with open('model-mi-mo-march-dst.pkl', 'rb') as f:
+with open('OM12-March-23.pkl', 'rb') as f:
     loaded_model = pickle.load(f)
 
 
