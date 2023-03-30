@@ -1,10 +1,10 @@
 
 # Open Muscle
-Open-Source muscle contraction & detection system.
+## The Open-Source Forearm Muscle-Based Finger Tracking Device.
 
 Open Muscle is designed to provide biometric machine learning training data for use in prosthetic technologies. Most problems in AI are solved using giant data sets. Open muscle aims to provide the hardware, software for a muscle contraction training data set with **target values** and/or **classification data** included.
 
-LASK, Open Muscle's counterpart, is an open source finger movement **somatosensor** (It detects the physical movement of the fingers). **#better word for this needed**
+LASK, Open Muscle's counterpart, is an open source finger movement **somatosensor** that provides the labels to the feature data provided by open muscle. Open Muscle was able to detect finger movement and pressure with only tens of minutes of training data.
 
 ![Alt text](https://github.com/turfptax/openmuscle/blob/main/images/Results-OM12-Jan-01.jpg?raw=true "OpenMuscle12")
 
