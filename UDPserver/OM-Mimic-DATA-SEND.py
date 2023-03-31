@@ -14,7 +14,7 @@ s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 #packet["time"] = time.localtime()
 #packet['data'] = data
 
-text_file = open('datasetONE-END.txt','r')
+text_file = open('training_file10.txt','r')
 
 for i in text_file.read().split('\n'):
     time.sleep(.009)
