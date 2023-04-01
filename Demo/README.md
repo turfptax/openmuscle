@@ -32,7 +32,8 @@ Live data can use the LASK system to show its accuracy or it can be used without
 
 Since the movement that we trained is specific to the motion that the LASK mechanical design provides it is suggested to use the LASK system while it is turned off.
 
-Since the algorithm that filters the packets in the training phase, the same algorithm will have to be applied to the real-time data. For now we are suggesting to use the 'Mimic-Lask-Packets-0Data.py' to send 'dummy' lask data if you plan on not using the LASK system during real-time predictions.
+## virtual_lask_zero_values.py
+Since the algorithm that filters the packets in the training phase, the same algorithm will have to be applied to the real-time data. For now we are suggesting to use the 'virtual_lask_zero_values.py' to send 'dummy' lask data if you plan on not using the LASK system during real-time predictions.
 
 ## demo_live_predictions.py
 
@@ -53,7 +54,9 @@ If you just want to see the model work in real-time we have supplied 3 short tra
 
 The model, by default, is trained on capture_9. 
 
+### virtual_sensor_transmitter.py
 You can use the 'virtual_sensor_transmitter.py' program to send the packets over UDP to yourself.
+It takes capture_10, by default, and sends the raw packets as a virutal device(s)
 
 This allows you to run both the mimic program and the Live Demo Predictions program at the same time to see the predictions from the precaptured dataset.
 
