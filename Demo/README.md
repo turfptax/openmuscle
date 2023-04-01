@@ -4,11 +4,11 @@ See Wiki
 
 # Use the Demo folder for training your own model
 
-## Train-Model.py
+## train_model.py
 
 Train-Model.py is setup to use the 'Trained-Demo-Model.pkl' pickle file as an export.
 
-The input CSV file is 'Data-Captures/training_file9_USED TO TRAIN MODEL.csv'
+The input CSV file is 'Data-Captures/capture_9.csv'
 
 When you run the program it will feed in the data from the csv file and train it with the 12 features and the 4 labels. These labels are also referred to as tokens, but they are supplying the model with the desired outputs from the system.
 
@@ -21,7 +21,7 @@ The model is stored inside of the pickle file to be used to make live prediction
 ## Convert data to CSV Format
 If you do not have the data in CSV format from open muscle you will need to use the 'Data-Captures' folder to take the raw text file json and convert it.
 
-# filter-training-data-convert-CSV.py
+# sensor_data_filter.py
 The convert training data program takes the raw text json file from the recorded session and pairs the LASK data with the Open Muscle data.
 
 Since UDP packets come in one at a time, we will have to pair them by timestamps and throw out data that does not have a pair.
@@ -34,7 +34,7 @@ Since the movement that we trained is specific to the motion that the LASK mecha
 
 Since the algorithm that filters the packets in the training phase, the same algorithm will have to be applied to the real-time data. For now we are suggesting to use the 'Mimic-Lask-Packets-0Data.py' to send 'dummy' lask data if you plan on not using the LASK system during real-time predictions.
 
-# Using Live-Demo-Predictions.py
+# Using demo_live_predictions.py
 
 If you have trained your model and want to see live predictions use the live demo predictions program.
 
