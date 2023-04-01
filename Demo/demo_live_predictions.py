@@ -18,7 +18,7 @@ from sklearn.multioutput import MultiOutputRegressor
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 
 # Load the saved model from the file
-with open('OM12-March-23.pkl', 'rb') as f:
+with open('Trained-Demo-Model.pkl', 'rb') as f:
     loaded_model = pickle.load(f)
 
 
@@ -278,7 +278,10 @@ while not done:
             draw_lask(pack)
             device = 'OpenMuscle LASK'
         if found_count % 5 == 0 and found_count > 54:
-            input_data = np.array(found_data[-1]).reshape(1, -1)
+            om_data = found_data[-1]
+            om_data = om_data[:-1]
+            #print(om_data)
+            input_data = np.array(om_data).reshape(1, -1)
             last_prediction = loaded_model.predict(input_data)
             #print(last_prediction)
             #print(last_lask_packet)
