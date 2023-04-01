@@ -6,8 +6,6 @@ Open Muscle is designed to provide biometric machine learning training data for 
 
 LASK, Open Muscle's counterpart, is an open source finger movement **somatosensor** that provides the labels to the feature data provided by open muscle. Open Muscle was able to detect finger movement and pressure with only tens of minutes of training data.
 
-![Alt text](https://github.com/turfptax/openmuscle/blob/main/images/Results-OM12-Jan-01.jpg?raw=true "OpenMuscle12")
-
 # Use the Demo folder if you are just interested in the data and training your own model
 
 ## Why use hall sensors instead of EMG sensors?
