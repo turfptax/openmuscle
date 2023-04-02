@@ -146,7 +146,7 @@ def text_gui(screen=screen):
     
 ### File Save Setup
 filenumber = len(os.listdir('Data-Captures/'))
-file = open(f'TrainingData/CSV/capture_{filenumber}.txt','w')
+file = open(f'Data-Captures/capture_{filenumber}.txt','w')
 
 # Time Axis Counters
 t0 = time.time()
