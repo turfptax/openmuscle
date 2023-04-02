@@ -20,11 +20,11 @@ def evaluate_model(y_true, y_pred):
     print(f'Mean Absolute Error: {mae}')
     
 
-data = pd.read_csv('Data-Captures/capture_9_demo_train.csv')
+data = pd.read_csv('Data-Captures/capture_010.csv')
 
-input_features = ['OM1','OM2','OM3','OM4','OM5','OM6','OM7','OM8','OM9','OM10','OM11','OM12']
+input_features = ['OM1','OM2','OM3','OM4','OM5','OM6','OM7','OM8','OM9','OM10','OM11','OM12','om_time']
 X = data[input_features]
-input_labels = ['LASK1','LASK2','LASK3','LASK4']
+input_labels = ['LASK1','LASK2','LASK3','LASK4','lask_time']
 y = data[input_labels]
 
 # Split the data into training and testing sets, and scale the input features
@@ -38,7 +38,7 @@ model = MultiOutputRegressor(base_model)
 
 model.fit(X_train, y_train)
 # Print the evaluation metric(s) to the screen
-with open('Trained-Demo-NoTime-January23.pkl', 'wb') as f:
+with open('capture_11_no_time.pkl', 'wb') as f:
     pickle.dump(model, f)
 
 
@@ -57,5 +57,5 @@ result_df['Predicted LASK3'] = y_pred[:, 2]
 result_df['Predicted LASK4'] = y_pred[:, 3]
 
 # Save the DataFrame as a CSV file
-result_df.to_csv('p_vs_a_jan23.csv', index=False)
+result_df.to_csv('avp-4-2-23.csv', index=False)
 

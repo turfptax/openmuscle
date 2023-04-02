@@ -48,8 +48,8 @@ def check_chunk():
     #if not len(found) % 1000:
         #print('found ammount: ',len(found))
 
-text_file = open('March2823training_file9.txt','r')
-csv_file = open('March2823training_file9.csv','w',newline="") #added newline="" FYI FMI
+text_file = open('capture_11.txt','r')
+csv_file = open('capture_11.csv','w',newline="") #added newline="" FYI FMI
 writer = csv.writer(csv_file)
 writer.writerow(['OM1','OM2','OM3','OM4','OM5','OM6','OM7','OM8','OM9','OM10','OM11','OM12','om_time','LASK1','LASK2','LASK3','LASK4','lask_time'])
              

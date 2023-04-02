@@ -19,7 +19,7 @@ def evaluate_model(y_true, y_pred):
     print(f'Mean Absolute Error: {mae}')
     
 
-data = pd.read_csv('capture_11.csv')
+data = pd.read_csv('Data-Captures/capture_11.csv')
 
 input_features = ['OM1','OM2','OM3','OM4','OM5','OM6','OM7','OM8','OM9','OM10','OM11','OM12','om_time']
 X = data[input_features]
