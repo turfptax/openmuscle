@@ -4,6 +4,12 @@ See Wiki
 
 # Use the Demo folder for training your own model
 
+# Quick Setup
+
+1. Run train_model_time.py
+2. Run demo_live_time_predictions.py
+3. While the demo is running run virtual_sensor_transmitter.py to send virtual data packets to the demo
+
 ## train_model.py
 
 Train-Model.py is setup to use the 'Trained-Demo-Model.pkl' pickle file as an export.
