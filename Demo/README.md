@@ -8,7 +8,7 @@ See Wiki
 
 Train-Model.py is setup to use the 'Trained-Demo-Model.pkl' pickle file as an export.
 
-The input CSV file is 'Data-Captures/capture_9.csv'
+The input CSV file is 'Data-Captures/capture_11.csv'
 
 When you run the program it will feed in the data from the csv file and train it with the 12 features and the 4 labels. These labels are also referred to as tokens, but they are supplying the model with the desired outputs from the system.
 
@@ -50,13 +50,13 @@ This will
 
 ## Using a Virtual Open Muscle and LASK
 
-If you just want to see the model work in real-time we have supplied 3 short training files 8, 9, and 10.
+If you just want to see the model work in real-time we have supplied 2 short training files 11 and 12.
 
-The model, by default, is trained on capture_9. 
+The model, by default, is trained on capture_11. 
 
 ### virtual_sensor_transmitter.py
 You can use the 'virtual_sensor_transmitter.py' program to send the packets over UDP to yourself.
-It takes capture_10, by default, and sends the raw packets as a virutal device(s)
+It takes capture_12, by default, and sends the raw packets as a virutal device(s)
 
 This allows you to run both the mimic program and the Live Demo Predictions program at the same time to see the predictions from the precaptured dataset.
 
