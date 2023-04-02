@@ -145,8 +145,8 @@ def text_gui(screen=screen):
     screen.blit(surface,(0,40))
     
 ### File Save Setup
-filenumber = len(os.listdir('../TrainingData/CSV/'))
-file = open(f'../TrainingData/CSV/training_file{filenumber}.txt','w')
+filenumber = len(os.listdir('TrainingData/CSV/'))
+file = open(f'TrainingData/CSV/training_file{filenumber}.txt','w')
 
 # Time Axis Counters
 t0 = time.time()
