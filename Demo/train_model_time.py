@@ -38,7 +38,7 @@ model = MultiOutputRegressor(base_model)
 model.fit(X_train, y_train)
 
 # Print the evaluation metric(s) to the screen
-with open('live_capture.pkl', 'wb') as f:
+with open('capture_11.pkl', 'wb') as f:
     pickle.dump(model, f)
 
 
