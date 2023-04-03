@@ -17,7 +17,7 @@ pandas
 pygame
 
 ```
-pip install scikit-learn, pandas, pygame
+pip install scikit-learn pandas pygame
 ```
 
 ## train_model.py
