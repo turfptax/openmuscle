@@ -11,12 +11,13 @@ See Wiki
 3. While the demo is running run virtual_sensor_transmitter.py to send virtual data packets to the demo
 
 # Dependencies
+
 scikit-learn
 pandas
 pygame
 
 ```
-pip install scikit-learn
+pip install scikit-learn, pandas, pygame
 ```
 
 ## train_model.py
