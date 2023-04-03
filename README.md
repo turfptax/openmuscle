@@ -44,6 +44,8 @@ We have met a few goals!
  - [x] build a hand gesture detection device for data **target values** :LASK4
  - [ ] Create an open-source server to store training data and negotiate connections
  - [ ] Raise awareness and ask people to help by providing training data
+ - [ ] Create a kit of people to try/test the prototype
+ - [ ] Create a 'pre-production' version of the bracelet and lask
 
 ## Current Open Muscle Prototype V5.3.0
 
