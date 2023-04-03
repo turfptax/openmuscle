@@ -339,9 +339,9 @@ def send_hand(p,maxim,minim):
     fingerRatios = []
     for i in range(4):
         test = (p[i]-minim[i])/(maxim[i]-minim[i])
-        if test > .75:
+        if test > .65:
             test = 1
-        elif test > .25:
+        elif test > .32:
             test = 2/3
         else:
             test = 1/3
@@ -359,6 +359,8 @@ count = 0
 done = False
 found_data = []
 predictions = []
+
+######### MAX MIN FOR HAND
 maxim = [5200,5087,5011,5117]
 minim = [4000,4182,4103,4504]
 while not done:
@@ -410,7 +412,7 @@ for i in predictions:
 for n in range(5):
     maxim = [max(i) for i in zip(*predictions)][n]
     minim = [min(i) for i in zip(*predictions)][n]
-    print(f'Column:{n} min:{minim} max:{maxim}')
+    print(f'Column:{n}   min:{minim}        max:{maxim}')
 
 
 

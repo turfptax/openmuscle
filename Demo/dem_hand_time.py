@@ -359,8 +359,10 @@ count = 0
 done = False
 found_data = []
 predictions = []
+####### MAX MIN FOR HAND
 maxim = [5200,5087,5011,5117]
 minim = [4000,4182,4103,4504]
+
 while not done:
     for event in pg.event.get():
         if event.type == pg.QUIT:
