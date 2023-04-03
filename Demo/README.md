@@ -10,6 +10,14 @@ See Wiki
 2. Run demo_live_time_predictions.py
 3. While the demo is running run virtual_sensor_transmitter.py to send virtual data packets to the demo
 
+# Dependencies
+scikit-learn
+pandas
+pygame
+
+python```
+pip install scikit-learn```
+
 ## train_model.py
 
 Train-Model.py is setup to use the 'Trained-Demo-Model.pkl' pickle file as an export.
