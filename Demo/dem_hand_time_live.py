@@ -339,7 +339,13 @@ def send_hand(p,maxim,minim):
     fingerRatios = []
     for i in range(4):
         test = (p[i]-minim[i])/(maxim[i]-minim[i])
-        print(test)
+        if test > .75:
+            test = 1
+        elif test > .25:
+            test = 2/3
+        else:
+            test = 1/3
+        #print(test)
         fingerRatios.append(test)
     drawHand(fingerRatios)
         
