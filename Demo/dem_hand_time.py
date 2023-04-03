@@ -19,7 +19,7 @@ from sklearn.multioutput import MultiOutputRegressor
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 
 # Load the saved model from the file
-with open('live_capture.pkl', 'rb') as f:
+with open('capture_11.pkl', 'rb') as f:
     loaded_model = pickle.load(f)
 
 
