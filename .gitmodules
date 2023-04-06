@@ -1,0 +1,3 @@
+[submodule "MicroPython/ugit"]
+	path = MicroPython/ugit
+	url = https://github.com/turfptax/ugit
