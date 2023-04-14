@@ -39,25 +39,6 @@ LASK4 is the labeling device that obtains the finger movement labels for the fea
  - Programming Language: MicroPython
  - Sample Rate: 1200 s/s across all 12 ADCs: 100 s/s for each sensor with UDP transmission..
 
-## Current Needs:
-
-1. Machine Learning Engineer / Nerual network
-2. Electric Engineer
-3. Audio Specialist
-4. Mechanical Engineer
-5. Students
-6. Crowd Source Data Acquisition (wear the bracelet)
-
-## Currently working on OM24
-Open Muscle 24 suggested features
-1. 24 Pressure sensors (hall effect / magnet) pairs
-2. Dedicated ADCs sampled at ~ 100s/s each
-3. Dedicated Analog ADO for the sensors
-4. Programmed in C++ 
-5. Bluetooth
-6. Phone Application to gather biometric data
-7. LASK system integration for HUD and
-8. 1000mah battery or enough charge to last for 8-16hrs of use
 
 
 
