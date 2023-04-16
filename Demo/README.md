@@ -88,7 +88,7 @@ I have already used the 'filter-training-data-convert-CSV.py' on the three train
 # Results for Training on January23.csv
 - Mean Squared Error: 6131.50072204039
 - Mean Absolute Error: 23.225226598136324
-Training session video was also recorded here: [https://www.youtube.com/watch?v=BRkbyyItcVQ](https://youtu.be/BRkbyyItcVQ))
+- Training session video was also recorded here: [https://www.youtube.com/watch?v=BRkbyyItcVQ](https://youtu.be/BRkbyyItcVQ))
 
 
 
