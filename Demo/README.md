@@ -81,6 +81,17 @@ If you want to use one of the other two Data-Capture files instead of capture 9,
 data = pd.read_csv('Data-Captures/capture_9.csv')
 I have already used the 'filter-training-data-convert-CSV.py' on the three training files but you can also convert them into CSV by changing the code in the conversion file to the other txt file.
 
+# Results for Training on capture_11.csv
+- Mean Squared Error: 7689.885189928801
+- Mean Absolute Error: 29.919568537049315
+
+# Results for Training on January23.csv
+- Mean Squared Error: 6131.50072204039
+- Mean Absolute Error: 23.225226598136324
+- Training session video was also recorded here: [https://www.youtube.com/watch?v=BRkbyyItcVQ](https://youtu.be/BRkbyyItcVQ))
+
+
+
 
 
 

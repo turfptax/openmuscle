@@ -6,19 +6,7 @@ Open Muscle is designed to provide biometric machine learning training data for 
 
 LASK, Open Muscle's counterpart, is an open source finger movement **somatosensor** that provides the labels to the feature data provided by open muscle. Open Muscle was able to detect finger movement and pressure with only tens of minutes of training data.
 
-# Use the Demo folder if you are just interested in the data and training your own model
-
-## Why use hall sensors instead of EMG sensors?
-Open Muscle was designed to be the least expensive, highest signal to noise ratio, and least complex deployment device that is able to detect forearm muscle contractions.
-
-The physical movement of muscles detected by a hall sensor and magnet pairs fit these requirements. Since the frequency requirements of physical movement or pressure does not require a high sampling rate it further reduces the cost of the sensor hardware.
-We are working on a silicon nipple spring for the 6th version of Open Muscle to further reduce the cost, complexity, and bulkiness of version 5.
-
-### Pros
-- Lower sampling
-- Higher signal to noise ratio (in some regards)
-
-# Current Working Version of Open Muscle:
+# Current Working Prototype Version of Open Muscle:
 ## OpenMuscle 12 or OM12
 Open Muscle 12 uses the built in ADCs on an ESP32-S2 for all 12 sensors. It can send 1200 s/s over UDP to the UDP python server that picks it up. 
 - 12 Hall Effect Sensors
@@ -37,8 +25,6 @@ LASK4 is the labeling device that obtains the finger movement labels for the fea
 
 ## **Roadmap**
 
-We have met a few goals!
-
  - [x] Create an open-source hardware forearm bracelet :OM12 
  - [x] create the open-source software to acquire the training data :UDPserver
  - [x] build a hand gesture detection device for data **target values** :LASK4
@@ -53,25 +39,6 @@ We have met a few goals!
  - Programming Language: MicroPython
  - Sample Rate: 1200 s/s across all 12 ADCs: 100 s/s for each sensor with UDP transmission..
 
-## Current Needs:
-
-1. Machine Learning Engineer / Nerual network
-2. Electric Engineer
-3. Audio Specialist
-4. Mechanical Engineer
-5. Students
-6. Crowd Source Data Acquisition (wear the bracelet)
-
-## Currently working on OM24
-Open Muscle 24 suggested features
-1. 24 Pressure sensors (hall effect / magnet) pairs
-2. Dedicated ADCs sampled at ~ 100s/s each
-3. Dedicated Analog ADO for the sensors
-4. Programmed in C++ 
-5. Bluetooth
-6. Phone Application to gather biometric data
-7. LASK system integration for HUD and
-8. 1000mah battery or enough charge to last for 8-16hrs of use
 
 
 
