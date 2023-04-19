@@ -6,6 +6,11 @@ Open Muscle is designed to provide biometric machine learning training data for 
 
 LASK, Open Muscle's counterpart, is an open source finger movement **somatosensor** that provides the labels to the feature data provided by open muscle. Open Muscle was able to detect finger movement and pressure with only tens of minutes of training data.
 
+<br />
+<div align="center">
+    <img src="images/OpenMuscle-FlowChart.jpg" alt="OpenMuscle Flow Chart" width="100%">
+</div>
+
 # Current Working Prototype Version of Open Muscle:
 ## OpenMuscle 12 or OM12
 Open Muscle 12 uses the built in ADCs on an ESP32-S2 for all 12 sensors. It can send 1200 s/s over UDP to the UDP python server that picks it up. 
