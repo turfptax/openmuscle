@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART '35RAPC5CHWNSN'
+CLASS = IO
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "Switchcraft", "35RAPC5CHWNSN" (!) = "", "35RAPC5CHWNSN", "Other", "502-35RAPC5CHWNSN", "https://www.mouser.co.uk/ProductDetail/Switchcraft/35RAPC5CHWNSN?qs=tlsG%2FOw5FFhDrydSbX%252BonQ%3D%3D", "Phone Connectors 3.5MM RAPC Jack, Wide Body, TRRS, No Switch", "https://www.switchcraft.com/assets/1/6/35RAPC5CHWNSN_CD.pdf", "5.5 mm"
+END_PART
+
+END.

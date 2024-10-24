@@ -1,0 +1,16 @@
+.EVQ-P2P02M :1 ;Tactile Switches 4.7x3.5mm SMD Light Touch Switch
+EVQP2P02M
+*STM S
+*NGS
+*PLB 1="NO_1" 2="COM_1" 3="NO_2" 4="COM_2"
+*MXP 4
+*DFN EVQ-P2P02M
+~!Mouser Part Number (667-EVQ-P2P02M)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Panasonic/EVQ-P2P02M?qs=WwqriLBepZtc43ACiW6Arw%3D%3D)
+~!Manufacturer_Name (Panasonic)
+~!Manufacturer_Part_Number (EVQ-P2P02M)
+~!Link Datasheet (https://componentsearchengine.com/Datasheets/1/EVQ-P2P02M.pdf)
+~!Height (2.3mm)
+~!3D_Model (EVQ-P2P02M)
+EVQ-P2P02M
+1.1!U 2.1!U 3.1!U 4.1!U 

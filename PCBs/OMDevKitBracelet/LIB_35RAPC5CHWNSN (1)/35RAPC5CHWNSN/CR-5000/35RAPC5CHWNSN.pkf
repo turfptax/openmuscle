@@ -1,0 +1,10 @@
+(unit MM)
+
+(package "35RAPC5CHWNSN"
+    (type UNDEF)
+    (uver 2)
+    (mountForm default
+        (footprintRef "35RAPC5CHWNSN")
+        (spec "default")
+    )
+)

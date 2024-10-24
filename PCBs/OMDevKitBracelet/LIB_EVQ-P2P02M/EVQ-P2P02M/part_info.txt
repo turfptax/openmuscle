@@ -1,0 +1,9 @@
+Manufacturer=Panasonic
+PartNumber=EVQ-P2P02M
+PartCategory=Switch
+PackageCategory=Other
+PinCount=4
+Version=1.11
+Released=2022-06-21 11:32:06
+Downloaded=2024-09-10 23:57:31
+3D=Y

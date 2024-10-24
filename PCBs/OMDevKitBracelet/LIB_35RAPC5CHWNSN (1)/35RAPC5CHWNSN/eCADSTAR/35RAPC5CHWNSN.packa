@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "35RAPC5CHWNSN"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2022-06-30-08:20:51)
+    (mountForm default
+        (footprintRef "35RAPC5CHWNSN")
+        (spec "System")
+    )
+)

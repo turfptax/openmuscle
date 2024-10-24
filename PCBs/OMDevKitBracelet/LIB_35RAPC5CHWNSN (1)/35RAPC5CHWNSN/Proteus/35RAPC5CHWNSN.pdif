@@ -1,0 +1,177 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "35RAPC5CHWNSN"
+   (description "Phone Connectors 3.5MM RAPC Jack, Wide Body, TRRS, No Switch")
+   (family "CON")
+   (package "35RAPC5CHWNSN")
+   (attribute "Datasheet Link" "https://www.switchcraft.com/assets/1/6/35RAPC5CHWNSN_CD.pdf")
+   (attribute "Geometry.Height" "5.5mm")
+   (attribute "Mouser Part Number" "502-35RAPC5CHWNSN")
+   (attribute "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Switchcraft/35RAPC5CHWNSN?qs=tlsG%2FOw5FFhDrydSbX%252BonQ%3D%3D")
+   (attribute "Manufacturer_Name" "Switchcraft")
+   (attribute "Manufacturer_Part_Number" "35RAPC5CHWNSN")
+   (gate
+    (symbol "35RAPC5CHWNSN")
+    (pin "1" 1 PS)
+    (pin "2" 2 PS)
+    (pin "3" 3 PS)
+    (pin "4" 4 PS)
+   )
+  )
+  (symbol "35RAPC5CHWNSN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 100) (pt 600 100) (pt 600 -200) (pt 200 -200) (pt 200 100) (closed))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -100) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 800 0) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 800 -100) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "35RAPC5CHWNSN"
+   (units MM)
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -2.9 -10.1)
+      (pt 8.6 -10.1)
+      (pt 8.6 0.1)
+      (pt -2.9 0.1)
+      (pt -2.9 -10.1))))
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -5.4 -1.8)
+      (pt -2.9 -1.8)
+      (pt -2.9 -7.8)
+      (pt -5.4 -7.8)
+      (pt -5.4 -1.8))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed true)
+      (pt -5.4 -1.8)
+      (pt -2.9 -1.8)
+      (pt -2.9 -7.8)
+      (pt -5.4 -7.8)
+      (pt -5.4 -1.8))))
+   (layer OCCA
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -6.4 2.148)
+      (pt 10.247 2.148)
+      (pt 10.247 -11.447)
+      (pt -6.4 -11.447)
+      (pt -6.4 2.148))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt -1.4 0.1)
+      (pt -2.9 0.1)
+      (pt -2.9 -10.1)
+      (pt -1.4 -10.1))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt 1.4 -10.1)
+      (pt 8.6 -10.1)
+      (pt 8.6 -4.6))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt 8.6 -1.8)
+      (pt 8.6 0.1)
+      (pt 1.4 0.1))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt 0 1.6)
+      (arc (pt 0.000 1.600) (pt -0.050 1.600) (pt 0.050 1.700) (start 180.0) (sweep -90.0))
+      (pt 0 1.7)
+      (arc (pt 0.000 1.700) (pt -0.050 1.600) (pt 0.050 1.700) (start 180.0) (sweep 90.0))
+      (pt 0 1.6))))
+   (leg 1 (pt 0.000 0.000) (padstack 1))
+   (leg 2 (pt 5.000 -8.400) (padstack 0))
+   (leg 3 (pt 8.100 -3.200) (padstack 0))
+   (leg 4 (pt 0.000 -9.300) (padstack 0))
+   (leg MH1 (pt 0.000 -4.800) (padstack 5))
+   (leg MH2 (pt 5.000 -4.800) (padstack 6))
+   (padstack 0
+    (hole 1.53)
+    (plated true)
+    (pad (layer TCOP) (round 2.295))
+    (pad (layer INNER) (round 2.295))
+    (pad (layer BCOP) (round 2.295))
+   )
+   (padstack 1
+    (hole 1.53)
+    (plated true)
+    (pad (layer TCOP) (square 2.295))
+    (pad (layer INNER) (round 2.295))
+    (pad (layer BCOP) (square 2.295))
+   )
+   (padstack 5
+    (hole 1.1)
+    (plated false)
+    (pad (layer TCOP) (round 0.550))
+    (pad (layer INNER) (round 0.550))
+    (pad (layer BCOP) (round 0.550))
+   )
+   (padstack 6
+    (hole 1.1)
+    (plated false)
+    (pad (layer TCOP) (round 0.550))
+    (pad (layer INNER) (round 0.550))
+    (pad (layer BCOP) (round 0.550))
+   )
+   (model "35RAPC5CHWNSN.stp"
+    (euler 0 0 0)
+    (offset 0 0 0)
+   )
+  )
+ )
+)
