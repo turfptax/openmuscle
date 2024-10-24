@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "LASK5-Symbol-Library")(type "KiCad")(uri "${KIPRJMOD}/LASK5-Symbol-Library.kicad_sym")(options "")(descr ""))
+)
