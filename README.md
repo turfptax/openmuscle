@@ -1,50 +1,76 @@
+# 🧠 OpenMuscle (Legacy Repository)
 
-# Open Muscle
-## The Open-Source Forearm Muscle-Based Finger Tracking Device.
+> 📢 **NOTE:** This repository is no longer actively maintained.  
+> All current work has moved to the new [**Open-Muscle GitHub Organization**](https://github.com/Open-Muscle).  
+> Please see the new [OpenMuscle Hub](https://github.com/Open-Muscle/OpenMuscle-Hub) for the latest devices, firmware, and documentation.
 
-Open Muscle is designed to provide biometric machine learning training data for use in prosthetic technologies. Most problems in AI are solved using giant data sets. Open muscle aims to provide the hardware, software for a muscle contraction training data set with **target values** and/or **classification data** included.
+---
 
-LASK, Open Muscle's counterpart, is an open source finger movement **somatosensor** that provides the labels to the feature data provided by open muscle. Open Muscle was able to detect finger movement and pressure with only tens of minutes of training data.
+## ⚡ Quick Links to New Repositories
 
-<br />
+| Project | Description | Link |
+|--------|-------------|------|
+| **OpenMuscle Hub** | Central documentation and overview for all OpenMuscle projects | [OpenMuscle-Hub](https://github.com/Open-Muscle/OpenMuscle-Hub) |
+| **FlexGrid** | Modular 60-sensor wearable (successor to OM12) | [OpenMuscle-FlexGrid](https://github.com/Open-Muscle/OpenMuscle-FlexGrid) |
+| **LASK5** | Labeling device with joystick and buttons | [OpenMuscle-LASK5](https://github.com/Open-Muscle/OpenMuscle-LASK5) |
+| **Software** | MicroPython firmware, communication protocols, and ML hooks | [OpenMuscle-Software](https://github.com/Open-Muscle/OpenMuscle-Software) |
+| **OM12 Legacy Band** | Historical 12-sensor band hardware | [OpenMuscle-Band](https://github.com/Open-Muscle/OpenMuscle-Band) |
+
+---
+
+## 🧬 About This Repo
+
+This was the **original prototype** of OpenMuscle (OM12 + LASK4), developed to prove out muscle-based finger tracking using off-the-shelf parts and MicroPython.
+
+It remains here for archival purposes and for those referencing:
+- Early research and design iterations
+- Press and academic mentions (42+ stars)
+- Explorations in UDP-based muscle telemetry using hall effect sensors
+
 <div align="center">
     <img src="images/OpenMuscle-FlowChart.jpg" alt="OpenMuscle Flow Chart" width="100%">
 </div>
 
-# Current Working Prototype Version of Open Muscle:
-## OpenMuscle 12 or OM12
-Open Muscle 12 uses the built in ADCs on an ESP32-S2 for all 12 sensors. It can send 1200 s/s over UDP to the UDP python server that picks it up. 
-- 12 Hall Effect Sensors
-- 6 Cells of 2 Sensors Each
+---
+
+## 🧪 Prototype Overview
+
+### 🧠 OM12 – OpenMuscle 12 Sensor Band (v5.3.0)
+
+- 12 Hall Effect Sensors (49E)
+- 6 Sensor Cells, dual-input
 - PCB 5.3.0
-- ESP32-S2 Microcontroller
+- ESP32-S2
 - MicroPython
+- 1200 s/s via UDP transmission
 
-## LASK4 or LASK4 Version 2
-LASK4 is the labeling device that obtains the finger movement labels for the feature data obtained from OM12. It currently does not detect thumb movements. Next version to include the thumb for Version 3. Check out the LASK4 Repository for more info:
-- 4 Piston Tubes
-- OLED Screen
-- 4 Push buttons
+### ✋ LASK4 (Legacy)
+
+- 4 pistons
+- 4 push buttons
+- OLED screen
 - ESP32-S2 Microcontroller
-- MicroPython
 
-## **Roadmap**
+> The latest version is [LASK5](https://github.com/Open-Muscle/OpenMuscle-LASK5), with joystick and modular controls.
 
- - [x] Create an open-source hardware forearm bracelet :OM12 
- - [x] create the open-source software to acquire the training data :UDPserver
- - [x] build a hand gesture detection device for data **target values** :LASK4
- - [ ] Create an open-source server to store training data and negotiate connections
- - [ ] Raise awareness and ask people to help by providing training data
- - [ ] Create a 'pre-production' version of the bracelet and lask
+---
 
-## Current Open Muscle Prototype V5.3.0
+## ✅ Legacy Roadmap (Preserved for Context)
 
- - Custom PCB:  Open Muscle V5.3.0 Microcontroller: ESP32-S2 mini by Wemos v1.0.0
- - Hall Sensors: Hall Effect Sensor 49E
- - Programming Language: MicroPython
- - Sample Rate: 1200 s/s across all 12 ADCs: 100 s/s for each sensor with UDP transmission..
+- [x] Create an open-source forearm bracelet (OM12)
+- [x] Build a hand gesture labeling device (LASK4)
+- [x] Create UDP-based data capture tool
+- [ ] Build a hosted data training server
+- [ ] Raise community awareness
+- [ ] Create pre-production versions of both devices
 
+---
 
+## 🧾 License
 
+This repo remains under the MIT License, but newer repositories may use the CERN-OHL-S v2.0 for hardware components. See the respective repos for details.
 
+---
 
+Made with 💡 by [@TURFPTAx](https://github.com/turfptax)  
+Project now maintained at [Open-Muscle](https://github.com/Open-Muscle)
